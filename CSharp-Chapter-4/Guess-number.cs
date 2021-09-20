@@ -2,9 +2,9 @@
 
 namespace CSharp_Chapter_4
 {
-    class Program
+    class GuessNumberGame
     {
-        static void Main(string[] args)
+        static void GuessGame(string[] args)
         {
             int min = 1;
             int max = 100;
