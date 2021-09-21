@@ -6,26 +6,30 @@ namespace CSharp_Chapter_4
     {
         static void Main(string[] args)
         {
-            int min = 1;
-            int max = 100;
 
-            Random random = new Random();
+            string text = "Programmering";
+            char letter = 'm';
+            bool found = false;
+            int count = 0;
 
-            int randNum = random.Next(min, max);
-
-            //Console.WriteLine(randNum);
-
-            Console.WriteLine("Gissa nummer mellan 1 och 100!");
-
-            int user = int.Parse(Console.ReadLine());
-
-            while (user != randNum)
+            // Kör loopen 15 gånger, i börjar på 0 och slutar på 14
+            for (int i = 0; i < text.Length; i++)
             {
-                Console.WriteLine("Fel, försök igen!");
-                user = int.Parse(Console.ReadLine());
+                if (text[i] == letter)
+                {
+                    found = true;
+                    count++;
+                }
             }
 
-            Console.WriteLine($"Du svarade rätt, nummer {randNum}");
+            if (found)
+            {
+                Console.WriteLine($"Hittades {count}st bokstaven {letter}");
+            }
+            else
+            {
+                Console.WriteLine($"{letter} hittades inte");
+            }
         }
     }
 }
