@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 
 namespace CSharp_Chapter_4
 {
@@ -6,29 +7,17 @@ namespace CSharp_Chapter_4
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Skriv ett meddelande");
+            string text = Console.ReadLine();
 
-            string text = "Programmering";
-            char letter = 'm';
-            bool found = false;
-            int count = 0;
+            Console.WriteLine("Hur länge vänta mellan varje tecken (s)?");
+            int len = int.Parse(Console.ReadLine());
 
-            // Kör loopen 15 gånger, i börjar på 0 och slutar på 14
             for (int i = 0; i < text.Length; i++)
             {
-                if (text[i] == letter)
-                {
-                    found = true;
-                    count++;
-                }
-            }
+                Console.Write(text[i]);
 
-            if (found)
-            {
-                Console.WriteLine($"Hittades {count}st bokstaven {letter}");
-            }
-            else
-            {
-                Console.WriteLine($"{letter} hittades inte");
+                Thread.Sleep(1000 * len);
             }
         }
     }
